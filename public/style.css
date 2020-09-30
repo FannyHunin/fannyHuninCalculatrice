@@ -1,0 +1,15 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#calculatorBody{
+    background-image: url("./img/bg.jpg");
+    background-size: 190%;
+    background-position: center;
+    margin-top: 50px;
+    width: 550px;
+    height: 700px;
+    border: black 1px solid;
+}
