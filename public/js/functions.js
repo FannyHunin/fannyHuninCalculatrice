@@ -8,7 +8,17 @@ let btn16 = document.querySelectorAll("button")[15];
 
 let btn15 = document.querySelectorAll("button")[14]
 
-let bonusRow = document.querySelectorAll("row")[4]
+let row5 = document.querySelectorAll("div")[6];
+console.log(row5)
+let myAudio = document.querySelector("audio");
+console.log(myAudio.src)
+
+let playAudio = () => {
+    console.log(myAudio)
+    myAudio.src = "./public/audio/catParade.mp3"
+}
+
+row5.addEventListener("click", playAudio)
 
 let write = (e) => {
     calculatorScreen.value += e.target.innerText
@@ -55,12 +65,10 @@ btn15.addEventListener("click", () => {
     } else if (btn12.attributes.isPressed == "*") {
         value1 *= parseInt(calculatorScreen.value.substr(calculatorScreen.value.indexOf("*") + 1, 1))
         answer = parseInt(value1);
-        console.log(answer);
         calculatorScreen.value = answer
     } else if (btn16.attributes.isPressed == "/") {
         value1 /= parseInt(calculatorScreen.value.substr(calculatorScreen.value.indexOf("/") + 1, 1))
-        answer = parseInt(value1);
-        console.log(answer);
-        calculatorScreen.value = answer
+        answer = parseFloat(value1);
+        calculatorScreen.value = answer;
     }
 })

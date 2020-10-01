@@ -51,10 +51,13 @@ document.addEventListener("keydown", (e) => {
             value1 *= parseInt(calculatorScreen.value.substr(calculatorScreen.value.indexOf("*") + 1, 1))
             answer = parseInt(value1);
             calculatorScreen.value = answer
-        }else if (btn4.attributes.isPressed == "/") {
+        } else if (btn4.attributes.isPressed == "/") {
             value1 /= parseInt(calculatorScreen.value.substr(calculatorScreen.value.indexOf("/") + 1, 1))
             answer = parseInt(value1);
             calculatorScreen.value = answer
         }
     }
+    /*if(e.key == "c"){
+        calculatorScreen.value = "" 
+    }*/
 })

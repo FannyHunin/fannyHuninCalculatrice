@@ -35,7 +35,7 @@ let btnCreation = (row) => {
     });
 }
 
-//FAIRE BOUCLE QUI CREE 9 BOUTONS
+//FAIRE BOUCLE QUI CREE 3 BOUTONS
 
 //row1
 let row1 = numPad.appendChild(document.createElement("div"));
