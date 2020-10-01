@@ -22,7 +22,44 @@ calculatorScreen.setAttribute("id", "calculatorScreen");
 let numPad = calculatorBody.appendChild(document.createElement("div"));
 numPad.setAttribute("id", "numPad");
 
+//btnCreation
+/*let j = 0;
+let btnCreation = (row) => {
+    for (let i = 0; i < 4; i++) {
+        row.appendChild(document.createElement("button"));
+    }
+    let btnTab = Array.from(document.querySelectorAll("button"));
+    btnTab.forEach(element => {
+        element.className = "button"
+        element.innerText = btnTab.indexOf(element) + 1;
+    });
+}
+
+//FAIRE BOUCLE QUI CREE 9 BOUTONS
+
 //row1
+let row1 = numPad.appendChild(document.createElement("div"));
+row1.className = "row";
+btnCreation(row1);
+
+//row2
+let row2 = numPad.appendChild(document.createElement("div"));
+row2.className = "row";
+btnCreation(row2);
+
+
+//row3
+let row3 = numPad.appendChild(document.createElement("div"));
+row3.className = "row";
+btnCreation(row3);
+
+
+//row4
+let row4 = numPad.appendChild(document.createElement("div"));
+row4.className = "row";
+btnCreation(row4);*/
+
+
 let row1 = numPad.appendChild(document.createElement("div"));
 row1.className = "row";
 let btn1 = row1.appendChild(document.createElement("button"));
@@ -37,6 +74,7 @@ btn3.textContent = 3;
 let btn4 = row1.appendChild(document.createElement("button"));
 btn4.className = "opButton";
 btn4.textContent = "+";
+btn4.setAttribute("isPressed", "false")
 
 //row2
 let row2 = numPad.appendChild(document.createElement("div"));
