@@ -4,6 +4,10 @@ body{
     justify-content: center;
     align-items: center;
 }
+.title{
+    text-decoration: underline;
+    text-align: center;
+}
 #calculatorBody{
     background-image: url("./img/bg.jpg");
     background-size: 190%;

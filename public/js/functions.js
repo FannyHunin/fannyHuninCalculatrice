@@ -8,6 +8,8 @@ let btn16 = document.querySelectorAll("button")[15];
 
 let btn15 = document.querySelectorAll("button")[14]
 
+let bonusRow = document.querySelectorAll("row")[4]
+
 let write = (e) => {
     calculatorScreen.value += e.target.innerText
     if (e.target.innerText == "C") {
