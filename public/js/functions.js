@@ -8,17 +8,10 @@ let btn16 = document.querySelectorAll("button")[15];
 
 let btn15 = document.querySelectorAll("button")[14]
 
-let row5 = document.querySelectorAll("div")[6];
-console.log(row5)
-let myAudio = document.querySelector("audio");
-console.log(myAudio.src)
-
 let playAudio = () => {
     console.log(myAudio)
     myAudio.src = "./public/audio/catParade.mp3"
 }
-
-row5.addEventListener("click", playAudio)
 
 let write = (e) => {
     calculatorScreen.value += e.target.innerText

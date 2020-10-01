@@ -57,7 +57,4 @@ document.addEventListener("keydown", (e) => {
             calculatorScreen.value = answer
         }
     }
-    /*if(e.key == "c"){
-        calculatorScreen.value = "" 
-    }*/
 })
