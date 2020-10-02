@@ -1,67 +1,35 @@
 let value1;
-let answer;
+let op;
 
-let btn4 = document.querySelectorAll("button")[3];
-let btn8 = document.querySelectorAll("button")[7];
-let btn12 = document.querySelectorAll("button")[11];
-let btn16 = document.querySelectorAll("button")[15];
-
-let btn15 = document.querySelectorAll("button")[14]
-
-let playAudio = () => {
-    console.log(myAudio)
-    myAudio.src = "./public/audio/catParade.mp3"
-}
-
-let write = (e) => {
+numPad.addEventListener("click", (e) => {
     calculatorScreen.value += e.target.innerText
-    if (e.target.innerText == "C") {
+    if (e.target.innerText == "c") {
         calculatorScreen.value = ""
-    }
-    if (e.target.innerText == "=") {
-        calculatorScreen.value = calculatorScreen.value.slice(0, calculatorScreen.value.length - 1)
-    }
-}
-let addition = () => {
-    btn4.attributes.isPressed = "+"
-    value1 = parseInt(calculatorScreen.value);
-}
-let soustr = () => {
-    btn8.attributes.isPressed = "-"
-    value1 = parseInt(calculatorScreen.value);
-}
-let times = () => {
-    btn12.attributes.isPressed = "*"
-    value1 = parseInt(calculatorScreen.value);
-}
-let divide = () => {
-    btn16.attributes.isPressed = "/"
-    value1 = parseInt(calculatorScreen.value);
-}
-
-numPad.addEventListener("click", write);
-
-btn4.addEventListener("click", addition);
-btn8.addEventListener("click", soustr);
-btn12.addEventListener("click", times);
-btn16.addEventListener("click", divide);
-
-btn15.addEventListener("click", () => {
-    if (btn4.attributes.isPressed == "+") {
-        value1 += parseInt(calculatorScreen.value.substr(calculatorScreen.value.indexOf("+") + 1, 1))
-        answer = parseInt(value1);
-        calculatorScreen.value = answer
-    } else if (btn8.attributes.isPressed == "-") {
-        value1 -= parseInt(calculatorScreen.value.substr(calculatorScreen.value.indexOf("-") + 1, 1))
-        answer = parseInt(value1);
-        calculatorScreen.value = answer
-    } else if (btn12.attributes.isPressed == "*") {
-        value1 *= parseInt(calculatorScreen.value.substr(calculatorScreen.value.indexOf("*") + 1, 1))
-        answer = parseInt(value1);
-        calculatorScreen.value = answer
-    } else if (btn16.attributes.isPressed == "/") {
-        value1 /= parseInt(calculatorScreen.value.substr(calculatorScreen.value.indexOf("/") + 1, 1))
-        answer = parseFloat(value1);
-        calculatorScreen.value = answer;
+    } else if (e.target.innerText == "+") {
+        value1 = parseInt(calculatorScreen.value.slice(0, calculatorScreen.value.indexOf("+")));
+        op = "+";
+    } else if (e.target.innerText == "-") {
+        value1 = parseInt(calculatorScreen.value.slice(0, calculatorScreen.value.indexOf("-")));
+        op = "-";
+    } else if (e.target.innerText == "*") {
+        value1 = parseInt(calculatorScreen.value.slice(0, calculatorScreen.value.indexOf("*")));
+        op = "*";
+    } else if (e.target.innerText == "/") {
+        value1 = parseInt(calculatorScreen.value.slice(0, calculatorScreen.value.indexOf("/")));
+        op = "/";
+    } else if (e.target.innerText == "=") {
+        if (op == "+") {
+            value1 += parseInt(calculatorScreen.value.slice(calculatorScreen.value.indexOf("+") + 1, calculatorScreen.value.length));
+            calculatorScreen.value = value1
+        } else if (op == "-") {
+            value1 -= parseInt(calculatorScreen.value.slice(calculatorScreen.value.indexOf("-") + 1, calculatorScreen.value.length));
+            calculatorScreen.value = value1
+        } else if (op == "*") {
+            value1 *= parseInt(calculatorScreen.value.slice(calculatorScreen.value.indexOf("*") + 1, calculatorScreen.value.length));
+            calculatorScreen.value = value1
+        } else if (op == "/") {
+            value1 /= parseInt(calculatorScreen.value.slice(calculatorScreen.value.indexOf("/") + 1, calculatorScreen.value.length));
+            calculatorScreen.value = value1
+        }
     }
 })
